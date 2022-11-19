@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #0B2434;
+  padding: 20px;
+  font-family: 'Karla', sans-serif;
+}
+
+main {
+  background-color: #F5F5F5;
+  background-image: url("/table-background.jpg");
+  background-size: cover;
+  max-width: 800px;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px auto;
+}
+
+/** top **/
+
+.game-top {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1em;
+}
+
+.title {
+  font-size: 40px;
+  margin: 0 0 0.5em 0;
+  grid-column-start: 2;
+  justify-self: center;
+}
+
+.instructions {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin: 0 0 0.5em 0;
+}
+
+
+/* Score */
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+}
+
+.scoreboard.top {
+  background: #ffdb1a;
+  grid-column-start: 3;
+  justify-self: end;
+  box-shadow: inset 0 2px #ffdb1a, inset 0 -2px #ffd700, inset 2px 0 #e6c200,
+  inset -2px 0 #e6c200;
+}
+
+.scoreboard.bot {
+  background: #FF5858;
+  margin-top: 1em;
+  align-self: flex-start;
+  box-shadow: inset 0 2px #ff5858, inset 0 -2px #e64f4f, inset 2px 0 #cc4646,
+  inset -2px 0 #cc4646;
+}
+
+.scoreboard--title {
+  border-bottom: 1px #333333 solid;
+  margin-bottom: 3px;
+}
+
+/* Dice */
+
+.dice-container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.die-face {
+display: grid;
+grid-template-areas:
+  "a . c"
+  "e g f"
+  "d . b";
+flex: 0 0 auto;
+margin: 6px;
+padding: 5px;
+width: 50px;
+height: 50px;
+background-color: #e7e7e7;
+box-shadow: inset 0 2px white, inset 0 -2px #bbb, inset 2px 0 #d7d7d7,
+  inset -2px 0 #d7d7d7;
+border-radius: 10%;
+  cursor: pointer;
+}
+
+.pip {
+display: block;
+align-self: center;
+justify-self: center;
+width: 9px;
+height: 9px;
+border-radius: 50%;
+background-color: #333;
+}
+
+.pip:nth-child(2) {
+grid-area: b;
+}
+.pip:nth-child(3) {
+grid-area: c;
+}
+.pip:nth-child(4) {
+grid-area: d;
+}
+.pip:nth-child(5) {
+grid-area: e;
+}
+.pip:nth-child(6) {
+grid-area: f;
+}
+
+.pip:nth-child(odd):last-child {
+grid-area: g;
+}
+
+.roll-dice {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5035FF;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Karla', sans-serif;
+  cursor: pointer;
+}
+
+.roll-dice:focus {
+  outline: none;
+}
+
+.roll-dice:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.img-desc {
+  font-size: 0.75rem;
+  align-self: flex-end;
+}
